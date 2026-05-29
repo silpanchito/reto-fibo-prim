@@ -64,8 +64,8 @@ desafio-fibonacci-primos/
 
 ## 🔗 Enlaces
 
-- **Repositorio GitHub:** *(reemplazar con tu link)*
-- **Página publicada:** *(reemplazar con tu link — GitHub Pages / Netlify / Vercel)*
+- **Repositorio GitHub:** https://github.com/silpanchito/reto-fibo-prim
+- **Página publicada:** https://silpanchito.github.io/reto-fibo-prim/
 
 ---
 
