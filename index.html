@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Matemáticas en la Vida Real — Fibonacci &amp; Primos</title>
+  <link rel="stylesheet" href="css/estilos.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Mono:wght@300;400;500&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+</head>
+<body>
+
+  <!-- ── NAV FIJA ── -->
+  <nav id="navbar">
+    <div class="nav-inner">
+      <span class="nav-logo">∞ Mat<em>emáticas</em></span>
+      <div class="nav-links">
+        <a href="#fibonacci">🌿 Fibonacci</a>
+        <a href="#primos">🎵 Primos</a>
+        <a href="#combinado">🔗 Combinado</a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ══════════════════════════════════════
+       PORTADA
+  ══════════════════════════════════════ -->
+  <header id="portada">
+    <div class="portada-grid">
+      <div class="portada-text">
+        <p class="portada-tag">Desafío Web · 2025</p>
+        <h1>Matemáticas<br /><em>que resuelven<br />problemas</em></h1>
+        <p class="portada-sub">Fibonacci en la Naturaleza &amp; Números Primos en la Música, unidos en una sola página interactiva con HTML, CSS y JavaScript.</p>
+        <div class="portada-btns">
+          <a href="#fibonacci" class="pbtn pbtn-blue">Ver Fibonacci 🌿</a>
+          <a href="#primos"    class="pbtn pbtn-outline">Ver Primos 🎵</a>
+        </div>
+      </div>
+      <div class="portada-deco" aria-hidden="true">
+        <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <rect x="200" y="200" width="200" height="200" fill="none" stroke="#3b82f6" stroke-width="1.5" opacity=".35"/>
+          <rect x="200" y="76"  width="124" height="124" fill="none" stroke="#3b82f6" stroke-width="1.5" opacity=".35"/>
+          <rect x="76"  y="124" width="124" height="76"  fill="none" stroke="#3b82f6" stroke-width="1.5" opacity=".35"/>
+          <rect x="124" y="76"  width="76"  height="48"  fill="none" stroke="#3b82f6" stroke-width="1.5" opacity=".3"/>
+          <rect x="124" y="48"  width="48"  height="28"  fill="none" stroke="#3b82f6" stroke-width="1.5" opacity=".28"/>
+          <path d="M400 400 Q400 200 200 200 Q200 76 324 76 Q324 124 200 124 Q200 200 76 200" stroke="#60a5fa" stroke-width="2.5" fill="none" opacity=".65"/>
+          <circle cx="200" cy="200" r="4" fill="#60a5fa" opacity=".9"/>
+          <circle cx="324" cy="200" r="3" fill="#60a5fa" opacity=".7"/>
+          <circle cx="200" cy="76"  r="3" fill="#60a5fa" opacity=".7"/>
+          <circle cx="324" cy="76"  r="2" fill="#60a5fa" opacity=".5"/>
+          <text x="210" y="315" fill="#60a5fa" font-size="12" opacity=".45" font-family="monospace">φ = 1.618…</text>
+          <text x="205" y="332" fill="#60a5fa" font-size="11" opacity=".35" font-family="monospace">0,1,1,2,3,5,8,13,21…</text>
+        </svg>
+      </div>
+    </div>
+  </header>
+
+  <!-- ══════════════════════════════════════
+       SECCIÓN 1 — FIBONACCI EN LA NATURALEZA
+  ══════════════════════════════════════ -->
+  <section id="fibonacci">
+
+    <div class="s-hero fib-hero">
+      <div class="s-hero-overlay">
+        <p class="s-num">01</p>
+        <h2>Fibonacci<br /><em>en la Naturaleza</em></h2>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <!-- CONTEXTO -->
+      <div class="block-header">
+        <h3>¿Cuál es el problema real?</h3>
+        <div class="underline"></div>
+      </div>
+      <p class="block-desc">
+        En la naturaleza, la serie de Fibonacci aparece en los patrones de crecimiento de plantas, flores y ramas.
+        Esta página modela cuántas <strong>ramas nuevas</strong> aparecen en cada nivel de una planta,
+        siguiendo la progresión matemática que ocurre en la realidad.
+      </p>
+
+      <div class="context-grid">
+        <div class="ctx-card">
+          <span class="ctx-icon">🌸</span>
+          <h4>Pétalos de flores</h4>
+          <p>La mayoría de flores tienen 3, 5, 8 o 13 pétalos — siempre números de Fibonacci. Es la forma más eficiente de empacar pétalos alrededor de un centro.</p>
+        </div>
+        <div class="ctx-card">
+          <span class="ctx-icon">🌿</span>
+          <h4>Ramificación de plantas</h4>
+          <p>Cada rama que nace de un tronco sigue el patrón Fibonacci: 1 → 1 → 2 → 3 → 5 → 8… maximizando la luz captada por la planta.</p>
+        </div>
+        <div class="ctx-card">
+          <span class="ctx-icon">🐚</span>
+          <h4>Espiral áurea</h4>
+          <p>La razón entre términos consecutivos se aproxima a φ = 1.618 (número áureo). Esta proporción define la espiral visible en caracoles y galaxias.</p>
+        </div>
+      </div>
+
+      <!-- GALERÍA -->
+      <div class="block-header" style="margin-top:60px;">
+        <h3>Fibonacci en imágenes</h3>
+        <div class="underline"></div>
+      </div>
+      <!-- GALERÍA FIBONACCI -->
+       <div class="galeria-grid">
+        <figure class="galeria-item">
+            <img src="img/a-beautifully-spiraling-fern-leaf-up-close-ai-generated-photo.jpg"
+            alt="Fibonacci en la naturaleza" loading="lazy"
+            onerror="this.parentElement.classList.add('img-error')"/>
+            <figcaption>Fibonacci en la naturaleza — patrones en plantas y flores</figcaption>
+        </figure>
+        <figure class="galeria-item">
+            <img src="img/Fibonacci-spiral-nature-sunflower.jpg"
+            alt="Espiral Fibonacci en girasol" loading="lazy"
+            onerror="this.parentElement.classList.add('img-error')"/>
+            <figcaption>Girasol — las semillas siguen una espiral Fibonacci de 34 y 55</figcaption>
+        </figure>
+        <figure class="galeria-item">
+            <img src="img/Fibonacci numbers in nature.jpg"
+            alt="Combinación secreta Fibonacci" loading="lazy"
+            onerror="this.parentElement.classList.add('img-error')"/>
+            <figcaption>La proporción áurea — φ = 1.618… presente en toda la naturaleza</figcaption>
+        </figure>
+    </div>
+
+      <!-- ALGORITMO -->
+      <div class="block-header" style="margin-top:60px;">
+        <h3>¿Cómo funciona el algoritmo?</h3>
+        <div class="underline"></div>
+      </div>
+
+      <div class="algo-cards">
+        <div class="algo-card">
+          <span class="algo-num">01</span>
+          <h4>La Serie de Fibonacci</h4>
+          <p>Empieza con <strong>0</strong> y <strong>1</strong>. Cada número siguiente es la suma de los dos anteriores:<br/>0 → 1 → 1 → 2 → 3 → 5 → 8 → 13 → 21…</p>
+        </div>
+        <div class="algo-card">
+          <span class="algo-num">02</span>
+          <h4>Aplicación en Plantas</h4>
+          <p>Cada <strong>nivel de crecimiento</strong> produce tantas ramas nuevas como indica el término correspondiente de la serie. El modelo refleja el crecimiento real.</p>
+        </div>
+        <div class="algo-card">
+          <span class="algo-num">03</span>
+          <h4>El Algoritmo en JavaScript</h4>
+          <p>Solo tres variables (<code>a</code>, <code>b</code>, <code>c</code>) y un ciclo <code>for</code>. Sin arreglos: sumas sucesivas. Resultado mostrado con <code>getElementById()</code>.</p>
+        </div>
+      </div>
+
+      <!-- Secuencia animada -->
+      <div class="seq-box">
+        <div class="seq-row">
+          <span class="seq-n active">0</span>
+          <span class="seq-op">+</span>
+          <span class="seq-n active">1</span>
+          <span class="seq-op">→</span>
+          <span class="seq-n">1</span>
+          <span class="seq-op">→</span>
+          <span class="seq-n">2</span>
+          <span class="seq-op">→</span>
+          <span class="seq-n">3</span>
+          <span class="seq-op">→</span>
+          <span class="seq-n">5</span>
+          <span class="seq-op">→</span>
+          <span class="seq-n">8</span>
+          <span class="seq-op">→</span>
+          <span class="seq-n">13</span>
+          <span class="seq-op">→</span>
+          <span class="seq-n">…</span>
+        </div>
+      </div>
+
+      <!-- CÓDIGO -->
+      <div class="code-block">
+        <div class="code-top">
+          <span class="code-label">ALGORITMO FIBONACCI — SIN ARREGLOS</span>
+          <span class="code-lang">JavaScript</span>
+        </div>
+        <pre><code><span class="c-cmt">// Solo variables simples, sin arrays</span>
+<span class="c-kw">let</span> a <span class="c-op">=</span> <span class="c-num">0</span>;
+<span class="c-kw">let</span> b <span class="c-op">=</span> <span class="c-num">1</span>;
+<span class="c-kw">let</span> c;
+
+<span class="c-kw">for</span> (<span class="c-kw">let</span> i <span class="c-op">=</span> <span class="c-num">3</span>; i <span class="c-op">&lt;=</span> niveles; i<span class="c-op">++</span>) {
+    c <span class="c-op">=</span> a <span class="c-op">+</span> b;   <span class="c-cmt">// suma de los dos anteriores</span>
+    a <span class="c-op">=</span> b;
+    b <span class="c-op">=</span> c;
+}
+
+<span class="c-cmt">// Mostrar en la página con getElementById</span>
+document.getElementById(<span class="c-str">"resultadoFibonacci"</span>).innerHTML <span class="c-op">=</span> c;</code></pre>
+      </div>
+
+      <!-- FORMULARIO -->
+      <div class="block-header" style="margin-top:60px;">
+        <h3>Simular crecimiento de planta 🌱</h3>
+        <div class="underline"></div>
+      </div>
+
+      <div class="form-card">
+        <p>Ingresa cuántos niveles de crecimiento deseas simular. Se mostrará el número de ramas en cada nivel y el total acumulado:</p>
+        <div class="fg">
+          <label for="niveles">Número de niveles (1 – 30):</label>
+          <input type="number" id="niveles" min="1" max="30" placeholder="Ej: 8" />
+        </div>
+        <button id="btnFibonacci" onclick="calcularFibonacci()">Calcular crecimiento 🌿</button>
+        <div id="resultadoFibonacci" class="resultado" style="display:none;"></div>
+      </div>
+
+      <!-- CONCLUSIÓN -->
+      <div class="conclusion-card">
+        <span class="conc-icon">💡</span>
+        <div>
+          <h4>Conclusión</h4>
+          <p>Fibonacci no es solo matemática abstracta: es el <em>lenguaje del crecimiento</em>. Comprender este patrón permite modelar procesos naturales, diseñar estructuras eficientes y predecir comportamientos en biología, arquitectura y tecnología.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SECCIÓN 2 — PRIMOS EN LA MÚSICA
+  ══════════════════════════════════════ -->
+  <section id="primos">
+
+    <div class="s-hero music-hero">
+      <div class="s-hero-overlay">
+        <p class="s-num">02</p>
+        <h2>Números Primos<br /><em>en la Música</em></h2>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <!-- CONTEXTO -->
+      <div class="block-header">
+        <h3>¿Cuál es el problema real?</h3>
+        <div class="underline underline-pink"></div>
+      </div>
+      <p class="block-desc">
+        Esta página detecta números primos dentro de un <strong>rango de frecuencias</strong> ingresado por el usuario
+        y los relaciona con notas musicales reales. El algoritmo recorre el rango con un ciclo <code>for</code>
+        y cuenta divisores con el operador módulo para verificar si cada número es primo.
+      </p>
+
+      <div class="context-grid">
+        <div class="ctx-card ctx-pink">
+          <span class="ctx-icon">🎼</span>
+          <h4>Compases asimétricos</h4>
+          <p>Un compás de 5/4 o 7/8 (números primos) crea ritmos que no pueden dividirse uniformemente, generando tensión y originalidad únicas en la música.</p>
+        </div>
+        <div class="ctx-card ctx-pink">
+          <span class="ctx-icon">🎹</span>
+          <h4>Frecuencias especiales</h4>
+          <p>Las frecuencias primas (Hz) no forman armonías perfectas con otras, creando disonancias interesantes usadas en música contemporánea y experimental.</p>
+        </div>
+        <div class="ctx-card ctx-pink">
+          <span class="ctx-icon">🔐</span>
+          <h4>Criptografía musical</h4>
+          <p>Compositores como Messiaen y Ligeti usaron secuencias de primos para crear melodías impredecibles — igual que en la encriptación de datos.</p>
+        </div>
+      </div>
+
+      <!-- GALERÍA -->
+      <div class="block-header" style="margin-top:60px;">
+        <h3>Matemáticas y música en imágenes</h3>
+        <div class="underline underline-pink"></div>
+      </div>
+      <!-- GALERÍA PRIMOS -->
+       <div class="galeria-grid">
+        <figure class="galeria-item galeria-item-pink">
+            <img src="img/2023071011574988169.jpg"
+            alt="Números primos" loading="lazy"
+            onerror="this.parentElement.classList.add('img-error')"/>
+            <figcaption>Números primos — únicos e indivisibles como las notas musicales</figcaption>
+        </figure>
+        <figure class="galeria-item galeria-item-pink">
+            <img src="img/me-combinacion-secreta-2-resolucion.jpg"
+            alt="Espiral en helecho" loading="lazy"
+            onerror="this.parentElement.classList.add('img-error')"/>
+            <figcaption>Las matematicas en la musica y la decodificacion de mensajes</figcaption>
+        </figure>
+        <figure class="galeria-item galeria-item-pink">
+            <img src="img/Espectro_frecuencias_intro_750x400px.jpg"
+            alt="Espectro de frecuencias" loading="lazy"
+            onerror="this.parentElement.classList.add('img-error')"/>
+            <figcaption>Espectro de frecuencias — las frecuencias primas generan sonidos únicos</figcaption>
+        </figure></div>
+
+      <!-- ALGORITMO -->
+      <div class="block-header" style="margin-top:60px;">
+        <h3>¿Cómo funciona el algoritmo?</h3>
+        <div class="underline underline-pink"></div>
+      </div>
+
+      <div class="algo-cards algo-pink">
+        <div class="algo-card">
+          <span class="algo-num algo-num-pink">01</span>
+          <h4>¿Qué es un número primo?</h4>
+          <p>Un número es primo si solo tiene <strong>dos divisores</strong>: el 1 y él mismo. El 7 es primo. El 6 no, porque también lo dividen 2 y 3.</p>
+        </div>
+        <div class="algo-card">
+          <span class="algo-num algo-num-pink">02</span>
+          <h4>Cómo lo detectamos</h4>
+          <p>Recorremos con <code>for</code> desde 1 hasta el número. Contamos cuántos lo dividen exactamente (<code>% == 0</code>). Si el contador llega a 2: es primo.</p>
+        </div>
+        <div class="algo-card">
+          <span class="algo-num algo-num-pink">03</span>
+          <h4>Aplicación al rango</h4>
+          <p>El usuario ingresa un rango de frecuencias (Hz). El programa aplica la verificación a cada número y muestra los primos con su nota musical más cercana.</p>
+        </div>
+      </div>
+
+      <!-- CÓDIGO -->
+      <div class="code-block code-block-pink">
+        <div class="code-top">
+          <span class="code-label">VERIFICACIÓN DE NÚMERO PRIMO — SIN ARREGLOS</span>
+          <span class="code-lang code-lang-pink">JavaScript</span>
+        </div>
+        <pre><code><span class="c-kw">var</span> numero <span class="c-op">=</span> parseInt(document.getElementById(<span class="c-str">"numero"</span>).value);
+<span class="c-kw">var</span> contador <span class="c-op">=</span> <span class="c-num">0</span>;
+
+<span class="c-kw">for</span> (<span class="c-kw">var</span> i <span class="c-op">=</span> <span class="c-num">1</span>; i <span class="c-op">&lt;=</span> numero; i<span class="c-op">++</span>) {
+    <span class="c-kw">if</span> (numero <span class="c-op">%</span> i <span class="c-op">==</span> <span class="c-num">0</span>) {
+        contador<span class="c-op">++</span>;
+    }
+}
+
+<span class="c-kw">if</span> (contador <span class="c-op">==</span> <span class="c-num">2</span>) {
+    document.getElementById(<span class="c-str">"resultado"</span>).innerHTML <span class="c-op">=</span> <span class="c-str">"Es primo"</span>;
+} <span class="c-kw">else</span> {
+    document.getElementById(<span class="c-str">"resultado"</span>).innerHTML <span class="c-op">=</span> <span class="c-str">"No es primo"</span>;
+}</code></pre>
+      </div>
+
+      <!-- FORMULARIO 1: Rango de frecuencias -->
+      <div class="block-header" style="margin-top:60px;">
+        <h3>Buscar primos en un rango de frecuencias 🎵</h3>
+        <div class="underline underline-pink"></div>
+      </div>
+
+      <div class="form-card form-card-pink">
+        <p>Ingresa un rango de frecuencias en Hz (rango audible: 16 – 4200 Hz). El algoritmo recorrerá cada número, verificará si es primo y lo relacionará con una nota musical:</p>
+        <div class="fg-row">
+          <div class="fg">
+            <label for="rangoDesde">Desde (Hz):</label>
+            <input type="number" id="rangoDesde" min="16" max="4200" placeholder="Ej: 200" />
+          </div>
+          <div class="fg">
+            <label for="rangoHasta">Hasta (Hz):</label>
+            <input type="number" id="rangoHasta" min="16" max="4200" placeholder="Ej: 300" />
+          </div>
+        </div>
+        <button id="btnRango" onclick="buscarPrimosEnRango()">Buscar frecuencias primas 🎶</button>
+        <div id="resultadoRango" class="resultado resultado-pink" style="display:none;"></div>
+      </div>
+
+      <!-- FORMULARIO 2: Verificar número concreto -->
+      <div class="block-header" style="margin-top:48px;">
+        <h3>Verificar un número concreto 🎼</h3>
+        <div class="underline underline-pink"></div>
+      </div>
+
+      <div class="form-card form-card-pink">
+        <p>Ingresa cualquier número para saber si es primo y qué nota musical le corresponde como frecuencia:</p>
+        <div class="fg">
+          <label for="numero">Número a verificar (2 – 9999):</label>
+          <input type="number" id="numero" min="2" max="9999" placeholder="Ej: 7" />
+        </div>
+        <button id="btnPrimo" onclick="verificarPrimo()">Verificar número 🎵</button>
+        <div id="resultadoPrimo" class="resultado resultado-pink" style="display:none;"></div>
+      </div>
+
+      <!-- CONCLUSIÓN -->
+      <div class="conclusion-card music-conclusion">
+        <span class="conc-icon">💡</span>
+        <div>
+          <h4>Conclusión</h4>
+          <p>Los números primos en la música crean <em>ritmos únicos e irrepetibles</em>. Compositores como Messiaen y Ligeti los usaron para romper con la monotonía. Entender la primalidad ayuda a diseñar ritmos originales y — fuera de la música — a proteger información en criptografía.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ══════════════════════════════════════
+       SECCIÓN 3 — COMBINADO
+  ══════════════════════════════════════ -->
+  <section id="combinado">
+
+    <div class="s-hero combo-hero">
+      <div class="s-hero-overlay">
+        <p class="s-num">03</p>
+        <h2>Fibonacci <em>&amp;</em> Primos<br /><em>juntos</em></h2>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <div class="block-header">
+        <h3>¿Cuál es el problema real?</h3>
+        <div class="underline underline-purple"></div>
+      </div>
+      <p class="block-desc">
+        Dentro de la serie de Fibonacci existen números que <strong>también son primos</strong>: 2, 3, 5, 13, 89, 233…
+        Son extremadamente raros. Esta herramienta genera la serie Fibonacci, aplica la verificación de primalidad a cada término
+        y los relaciona con notas musicales si están en el rango audible.
+      </p>
+
+      <div class="algo-cards" style="margin-bottom:0">
+        <div class="algo-card">
+          <span class="algo-num" style="color:var(--combo-accent)">01</span>
+          <h4 style="color:var(--combo-accent)">Generar Fibonacci</h4>
+          <p>Se genera la serie usando solo variables <code>a</code>, <code>b</code>, <code>c</code> y un ciclo <code>for</code>, sin arreglos.</p>
+        </div>
+        <div class="algo-card">
+          <span class="algo-num" style="color:var(--combo-accent)">02</span>
+          <h4 style="color:var(--combo-accent)">Verificar primalidad</h4>
+          <p>Cada término se pasa por el algoritmo de contador con módulo. Si el contador es exactamente 2, es primo.</p>
+        </div>
+        <div class="algo-card">
+          <span class="algo-num" style="color:var(--combo-accent)">03</span>
+          <h4 style="color:var(--combo-accent)">Nota musical</h4>
+          <p>Si el valor cae en el rango audible (16 – 4186 Hz), se muestra la nota musical que le corresponde.</p>
+        </div>
+      </div>
+
+      <div class="form-card form-card-purple" style="margin-top:40px;">
+        <p>Ingresa cuántos términos de Fibonacci quieres analizar. Los primos se resaltarán en azul y se mostrará una tabla completa:</p>
+        <div class="fg">
+          <label for="terminosCombinados">Cantidad de términos (2 – 25):</label>
+          <input type="number" id="terminosCombinados" min="2" max="25" placeholder="Ej: 15" />
+        </div>
+        <button id="btnCombinado" onclick="calcularCombinado()">Analizar secuencia 🔍</button>
+        <div id="resultadoCombinado" class="resultado resultado-purple" style="display:none;"></div>
+      </div>
+
+      <div class="conclusion-card combo-conclusion">
+        <span class="conc-icon">💡</span>
+        <div>
+          <h4>Conclusión</h4>
+          <p>La intersección entre Fibonacci y los números primos demuestra que las matemáticas no son compartimentos separados. Un mismo número puede seguir el patrón de crecimiento de una planta <em>y</em> ser una frecuencia musical irrepetible al mismo tiempo.</p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ── FOOTER ── -->
+  <footer>
+    <div class="container">
+      <p class="footer-title">📎 Enlaces del proyecto</p>
+      <div class="footer-links">
+        <a href="#" class="footer-link" id="linkRepo">📁 Repositorio GitHub</a>
+        <a href="#" class="footer-link" id="linkPagina">🌐 Página publicada</a>
+      </div>
+      <p class="footer-copy">Proyecto académico · Desafío Web 2025 · HTML + CSS + JavaScript</p>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
